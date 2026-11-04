@@ -1,6 +1,6 @@
 # Front-End Research Study Guide
 
-A beginner-friendly companion to six front-end development group research briefs.
+A beginner-friendly front-end development study guide covering HTML, CSS, JavaScript, DOM events, responsive layouts and API-related data handling. Includes step-by-step model solutions for 24 research topics, runnable examples, explanatory diagrams and self-check questions.
 
 Start with **understanding**, not memorising: predict what will happen, run a small example, observe the result, and explain why.
 
@@ -14,8 +14,41 @@ Start with **understanding**, not memorising: predict what will happen, run a sm
 - Diagrams are explanatory illustrations, not browser screenshots or pixel-perfect page previews.
 - Is a study aid, not an additional assessment requirement. Follow your lecturer’s instructions where they differ.
 
+<a id="disclaimer"></a>
+## Disclaimer
+
+> This repository is an educational companion to the provided research briefs, not an official answer key or assessment rubric. Its model solutions and examples illustrate possible approaches; other valid solutions may exist. Follow your lecturer’s instructions and assessment requirements.
+>
+> The materials were prepared with AI assistance and may contain errors or omissions. Expected outputs are provided for comparison, not as evidence of completed browser testing. Students should run the examples, verify important claims against reliable documentation, and explain their own observations.
+>
+> Examples are simplified for learning and are not production-ready. They do not demonstrate every security, accessibility, validation or error-handling requirement. Use fictional or public data only; do not enter personal information, passwords, API keys or confidential material into shared examples or AI tools.
+>
+> PNG diagrams are conceptual illustrations, not browser screenshots. External documentation may change over time. Acknowledge sources and AI assistance according to your institution’s academic integrity requirements.
+
+<a id="repository-description"></a>
+## GitHub repository description
+
+Beginner-friendly front-end study guide with 24 worked topics, runnable HTML examples, PNG diagrams and self-check questions.
+
+<a id="included-resources"></a>
+## Included resources
+
+| Resource | Description |
+|---|---|
+| Study guide | Read explanations, follow worked solutions and check your understanding at your own pace. |
+| Runnable examples | Open small, independent HTML examples locally and change one thing at a time to investigate behaviour. |
+| PNG diagrams | Use visual explanations to understand page responsibilities, spacing, layout axes, event propagation and asynchronous flow. |
+| Self-check questions | Test whether you can explain the concept before consulting the answer hints. |
+| Troubleshooting guide | Identify common beginner mistakes and understand why an example behaves unexpectedly. |
+| Research-sharing template | Organise your question, prediction, evidence, conclusion and limitations into a clear explanation. |
+
+The example files and PNG diagrams are distributed in the companion study pack. Keep its `examples` and `assets` folders alongside this README; this Markdown file alone does not contain those files.
+
 ## Contents
 
+- [Disclaimer](#disclaimer)
+- [Repository description](#repository-description)
+- [Included resources](#included-resources)
 - [Start here](#start-here)
 - [The research habit](#the-research-habit)
 - [Beginner vocabulary](#beginner-vocabulary)
@@ -189,6 +222,8 @@ Official background: [MDN JavaScript Guide](https://developer.mozilla.org/en-US/
 ---
 <a id="lesson-1"></a>
 ## Lesson 1: Foundations of front-end development
+
+Understand the roles of HTML, CSS and JavaScript, compare basic programming concepts, explore usability and practise checking online claims.
 
 Scope source: `FED_L01_Group_Research_Student-1.docx`.
 
@@ -433,6 +468,8 @@ This example assumes normal author declarations in the same cascade layer, with 
 <a id="lesson-2"></a>
 ## Lesson 2: Functions and data modelling
 
+Learn how scope, parameters, return values, arrays, objects, filter(), map() and const support reusable JavaScript code.
+
 Scope source: `FED_L02_Group_Research_Student.docx`.
 
 <a id="topic-2-1"></a>
@@ -671,6 +708,8 @@ Can a const array become longer? Explain without using the phrase “const is im
 ---
 <a id="lesson-3"></a>
 ## Lesson 3: DOM interaction and events
+
+Explore how JavaScript finds page elements, handles user interactions and responds to events moving through nested elements.
 
 Scope source: `FED_L03_Group_Research_Brief.docx`.
 
@@ -917,6 +956,8 @@ This example uses ordinary click bubbling in the document, without Shadow DOM or
 ---
 <a id="lesson-4"></a>
 ## Lesson 4: HTML structure, forms and CSS
+
+Choose meaningful HTML structures and suitable form controls, resolve CSS conflicts and understand spacing through the box model.
 
 Scope source: `Group_Research_Brief-2.docx`.
 
@@ -1185,6 +1226,8 @@ box-sizing: border-box includes padding and border within the declared width. Ve
 <a id="lesson-5"></a>
 ## Lesson 5: Visual hierarchy and responsive layouts
 
+Improve visual hierarchy and use Flexbox and media queries to adapt layouts to different viewport widths.
+
 Scope source: `Group_Research_Brief-1.docx`.
 
 ![Diagram: a row has a horizontal main axis and a column has a vertical main axis in horizontal writing.](assets/03-flex-axes.png)
@@ -1430,6 +1473,8 @@ The displayed value is a useful aid; use the responsive viewport tool to test ex
 ---
 <a id="lesson-6"></a>
 ## Lesson 6: JSON, asynchronous code and result handling
+
+Read structured data, follow execution around await, handle missing fields and distinguish successful, empty and failed results.
 
 Scope source: `Group_Research_Brief.docx`.
 
