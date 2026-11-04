@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HTML, CSS and JavaScript</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; line-height: 1.5; }
+    button, input, select, textarea { font: inherit; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; background: #eef3f8; }
+    .activity-card { max-width: 25rem; padding: 1rem; border: 1px solid #999; border-radius: 0.5rem; }
+#join { padding: 0.6rem 1rem; background: navy; color: white; }
+  </style>
+</head>
+<body>
+  <p><a href="index.html">Back to example index</a></p>
+  <h1>HTML, CSS and JavaScript</h1>
+  <article class="activity-card">
+  <h2>Robotics Workshop</h2>
+  <p>Build a simple robot.</p>
+  <button id="join" type="button">Join activity</button>
+  <p id="message" aria-live="polite"></p>
+</article>
+  <script>
+const button = document.querySelector("#join");
+const message = document.querySelector("#message");
+button.addEventListener("click", () => {
+  message.textContent = "You have selected this activity.";
+});
+  </script>
+</body>
+</html>

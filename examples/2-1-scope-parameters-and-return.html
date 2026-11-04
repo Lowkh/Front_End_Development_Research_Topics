@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scope parameters and return</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; line-height: 1.5; }
+    button, input, select, textarea { font: inherit; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; background: #eef3f8; }
+    
+  </style>
+</head>
+<body>
+  <p><a href="index.html">Back to example index</a></p>
+  <h1>Scope parameters and return</h1>
+  <p>Open the Console. The intentional error is commented out in the source.</p>
+  <script>
+function totalPrice(ticketPrice, quantity, fee) {
+  const subtotal = ticketPrice * quantity;
+  return subtotal + fee;
+}
+console.log(totalPrice(10, 3, 2));
+console.log(totalPrice(10, 3, 0));
+// Uncomment to investigate scope, then comment it again:
+// console.log(subtotal);
+  </script>
+</body>
+</html>

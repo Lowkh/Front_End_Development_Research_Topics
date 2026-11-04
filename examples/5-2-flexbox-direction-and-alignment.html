@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flexbox direction and alignment</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; line-height: 1.5; }
+    button, input, select, textarea { font: inherit; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; background: #eef3f8; }
+    .cards { display: flex; flex-direction: row; justify-content: center; align-items: flex-start; gap: 1rem; height: 22rem; border: 1px solid; margin-top: 1rem; }
+.cards > div { padding: 1rem; border: 1px solid; }
+  </style>
+</head>
+<body>
+  <p><a href="index.html">Back to example index</a></p>
+  <h1>Flexbox direction and alignment</h1>
+  <p>Use the buttons to switch direction without changing alignment declarations.</p>
+<button id="row" type="button">Row</button>
+<button id="column" type="button">Column</button>
+<p id="direction">Current direction: row</p>
+<div class="cards" id="cards"><div>One</div><div>Two</div><div>Three</div></div>
+  <script>
+const cards = document.querySelector("#cards");
+for (const direction of ["row", "column"]) {
+  document.querySelector(`#${direction}`).addEventListener("click", () => {
+    cards.style.flexDirection = direction;
+    document.querySelector("#direction").textContent = `Current direction: ${direction}`;
+  });
+}
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What const does and does not prevent</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; line-height: 1.5; }
+    button, input, select, textarea { font: inherit; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; background: #eef3f8; }
+    
+  </style>
+</head>
+<body>
+  <p><a href="index.html">Back to example index</a></p>
+  <h1>What const does and does not prevent</h1>
+  <p>Open the Console. Enable the reassignment test only after predicting the result.</p>
+  <script>
+const activities = ["Robotics"];
+activities.push("Web Design");
+console.log(activities);
+const activity = { title: "Robotics", capacity: 20 };
+activity.capacity = 25;
+console.log(activity.capacity);
+// Uncomment to test reassignment:
+// activities = [];
+  </script>
+</body>
+</html>

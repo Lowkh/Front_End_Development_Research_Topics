@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Organise activity data</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; line-height: 1.5; }
+    button, input, select, textarea { font: inherit; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; background: #eef3f8; }
+    
+  </style>
+</head>
+<body>
+  <p><a href="index.html">Back to example index</a></p>
+  <h1>Organise activity data</h1>
+  <p>Read the data in the source, then compare the Console results.</p>
+  <script>
+const activities = [
+  { id: "A01", title: "Robotics Workshop", capacity: 20, booked: 12 },
+  { id: "A02", title: "Web Design Basics", capacity: 25, booked: 25 }
+];
+for (const activity of activities) {
+  const remaining = activity.capacity - activity.booked;
+  console.log(`${activity.title}: ${remaining} places left`);
+}
+const inconsistent = { name: "Photography Walk" };
+console.log(inconsistent.title);
+  </script>
+</body>
+</html>

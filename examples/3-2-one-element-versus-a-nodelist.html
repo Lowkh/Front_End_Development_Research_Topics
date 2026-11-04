@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>One element versus a NodeList</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; line-height: 1.5; }
+    button, input, select, textarea { font: inherit; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; background: #eef3f8; }
+    
+  </style>
+</head>
+<body>
+  <p><a href="index.html">Back to example index</a></p>
+  <h1>One element versus a NodeList</h1>
+  <ul id="list"><li class="item">Robotics</li><li class="item">Photography</li></ul>
+  <script>
+const oneItem = document.querySelector(".item");
+const items = document.querySelectorAll(".item");
+const empty = document.querySelectorAll(".missing");
+console.log(oneItem.textContent);
+console.log("Initial length:", items.length);
+console.log("First:", items[0].textContent);
+items.forEach((item) => console.log(item.textContent));
+console.log("Empty:", empty.length, empty[0]);
+const extra = document.createElement("li");
+extra.className = "item";
+extra.textContent = "Web Design";
+document.querySelector("#list").append(extra);
+console.log("Old query:", items.length);
+console.log("New query:", document.querySelectorAll(".item").length);
+  </script>
+</body>
+</html>

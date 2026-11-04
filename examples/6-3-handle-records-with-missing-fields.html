@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Handle records with missing fields</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; line-height: 1.5; }
+    button, input, select, textarea { font: inherit; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; background: #eef3f8; }
+    
+  </style>
+</head>
+<body>
+  <p><a href="index.html">Back to example index</a></p>
+  <h1>Handle records with missing fields</h1>
+  <p>Open the Console and compare the three normalised book records.</p>
+  <script>
+const records = [
+  { key: "/works/one", title: "JavaScript Basics", author_name: ["A. Tan", "B. Lim"] },
+  { key: "/works/two", title: "Learning HTML" },
+  { key: "/works/three", title: "CSS Layout", author_name: [] }
+];
+function toBook(record) {
+  const authors = Array.isArray(record.author_name)
+    ? record.author_name.filter((name) => typeof name === "string" && name.trim() !== "")
+    : [];
+  return {
+    id: record.key ?? null,
+    title: record.title || "Untitled",
+    author: authors.length > 0 ? authors.join(", ") : "Unknown author"
+  };
+}
+const books = records.map(toBook);
+console.log(books);
+  </script>
+</body>
+</html>

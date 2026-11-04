@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Choose the right event</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; line-height: 1.5; }
+    button, input, select, textarea { font: inherit; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; background: #eef3f8; }
+    
+  </style>
+</head>
+<body>
+  <p><a href="index.html">Back to example index</a></p>
+  <h1>Choose the right event</h1>
+  <form id="search-form">
+  <label for="query">Search activities</label>
+  <input id="query" name="query">
+  <button type="submit">Search</button>
+</form>
+<p id="status" aria-live="polite"></p>
+  <script>
+const form = document.querySelector("#search-form");
+const query = document.querySelector("#query");
+const status = document.querySelector("#status");
+query.addEventListener("input", () => console.log("input:", query.value));
+query.addEventListener("change", () => console.log("change:", query.value));
+query.addEventListener("keydown", (event) => console.log("key:", event.key));
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  status.textContent = `Searching for: ${query.value}`;
+});
+  </script>
+</body>
+</html>

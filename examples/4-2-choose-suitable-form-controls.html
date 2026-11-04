@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Choose suitable form controls</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; line-height: 1.5; }
+    button, input, select, textarea { font: inherit; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; background: #eef3f8; }
+    fieldset { margin: 1rem 0; } label { margin-right: 0.6rem; }
+  </style>
+</head>
+<body>
+  <p><a href="index.html">Back to example index</a></p>
+  <h1>Choose suitable form controls</h1>
+  <form id="registration">
+  <p><label for="name">Name</label><input id="name" name="name" required></p>
+  <fieldset>
+    <legend>Attendance mode</legend>
+    <input id="onsite" type="radio" name="mode" value="onsite" required>
+    <label for="onsite">On site</label>
+    <input id="online" type="radio" name="mode" value="online">
+    <label for="online">Online</label>
+  </fieldset>
+  <fieldset>
+    <legend>Topics of interest</legend>
+    <input id="robotics" type="checkbox" name="interests" value="robotics">
+    <label for="robotics">Robotics</label>
+    <input id="web" type="checkbox" name="interests" value="web">
+    <label for="web">Web development</label>
+  </fieldset>
+  <p><label for="session">Session</label>
+    <select id="session" name="session"><option value="morning">Morning</option><option value="afternoon">Afternoon</option></select></p>
+  <p><label for="places">Places</label><input id="places" name="places" type="number" min="1" max="5" value="1" required></p>
+  <p><label for="date">Preferred date</label><input id="date" name="date" type="date"></p>
+  <p><label for="notes">Additional requirements</label><textarea id="notes" name="notes" rows="3"></textarea></p>
+  <button type="submit">Preview registration</button>
+</form>
+<pre id="result" aria-live="polite">No preview yet.</pre>
+  <script>
+document.querySelector("#registration").addEventListener("submit", (event) => {
+  event.preventDefault();
+  const data = new FormData(event.currentTarget);
+  const preview = {
+    name: data.get("name"),
+    mode: data.get("mode"),
+    interests: data.getAll("interests"),
+    session: data.get("session"),
+    places: Number(data.get("places")),
+    date: data.get("date"),
+    notes: data.get("notes")
+  };
+  document.querySelector("#result").textContent = JSON.stringify(preview, null, 2);
+});
+  </script>
+</body>
+</html>

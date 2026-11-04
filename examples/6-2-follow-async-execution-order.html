@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Follow async execution order</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; line-height: 1.5; }
+    button, input, select, textarea { font: inherit; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; background: #eef3f8; }
+    
+  </style>
+</head>
+<body>
+  <p><a href="index.html">Back to example index</a></p>
+  <h1>Follow async execution order</h1>
+  <p>Read the source first. Predict the log order, then open the Console.</p>
+  <script>
+async function showOrder() {
+  console.log("A");
+  await Promise.resolve();
+  console.log("D");
+  console.log("C");
+}
+showOrder();
+console.log("E");
+console.log("B");
+  </script>
+</body>
+</html>

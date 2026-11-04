@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Choose loop filter or map</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; line-height: 1.5; }
+    button, input, select, textarea { font: inherit; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; background: #eef3f8; }
+    
+  </style>
+</head>
+<body>
+  <p><a href="index.html">Back to example index</a></p>
+  <h1>Choose loop filter or map</h1>
+  <p>Open the Console. Expand the logged arrays to inspect their contents.</p>
+  <script>
+const activities = [
+  { title: "Robotics Workshop", category: "Technology" },
+  { title: "Nature Walk", category: "Outdoor" },
+  { title: "Web Development", category: "Technology" }
+];
+const searchText = "web";
+const loopMatches = [];
+for (const activity of activities) {
+  if (activity.title.toLowerCase().includes(searchText)) {
+    loopMatches.push(activity);
+  }
+}
+const filterMatches = activities.filter((activity) =>
+  activity.title.toLowerCase().includes(searchText)
+);
+const titles = activities.map((activity) => activity.title);
+const technologyTitles = activities
+  .filter((activity) => activity.category === "Technology")
+  .map((activity) => activity.title);
+console.log("Loop:", loopMatches);
+console.log("Filter:", filterMatches);
+console.log("Map:", titles);
+console.log("Combined:", technologyTitles);
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Distinguish empty results from errors</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; line-height: 1.5; }
+    button, input, select, textarea { font: inherit; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; background: #eef3f8; }
+    
+  </style>
+</head>
+<body>
+  <p><a href="index.html">Back to example index</a></p>
+  <h1>Distinguish empty results from errors</h1>
+  <p>The output is simulated locally. No network request is made.</p><pre id="results"></pre>
+  <script>
+function decide(response, docs) {
+  if (!response.ok) {
+    return { state: "error", message: `Could not load books (HTTP ${response.status}).` };
+  }
+  if (!Array.isArray(docs)) {
+    return { state: "error", message: "Unexpected response format." };
+  }
+  if (docs.length === 0) {
+    return { state: "empty", message: "No books found. Try a different search." };
+  }
+  return { state: "success", message: `Found ${docs.length} book(s).` };
+}
+const cases = [
+  decide({ ok: true, status: 200 }, [{ title: "JavaScript Basics" }]),
+  decide({ ok: true, status: 200 }, []),
+  decide({ ok: false, status: 404 }, []),
+  decide({ ok: true, status: 200 }, undefined)
+];
+document.querySelector("#results").textContent = JSON.stringify(cases, null, 2);
+console.log(cases);
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Event target currentTarget and bubbling</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; line-height: 1.5; }
+    button, input, select, textarea { font: inherit; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; background: #eef3f8; }
+    #outer { padding: 2rem; border: 2px solid #7694ac; } #save { padding: 1rem; } #icon { display: inline-block; padding: 0.5rem; background: #ffe6b9; }
+  </style>
+</head>
+<body>
+  <p><a href="index.html">Back to example index</a></p>
+  <h1>Event target currentTarget and bubbling</h1>
+  <div id="outer">
+  <button id="save" type="button"><span id="icon">★</span> Save</button>
+</div>
+<p>Click directly on the star, then on the word Save. Compare the Console.</p>
+  <script>
+const button = document.querySelector("#save");
+const outer = document.querySelector("#outer");
+button.addEventListener("click", (event) => {
+  console.log("button:", event.target.id, event.currentTarget.id);
+});
+outer.addEventListener("click", (event) => {
+  console.log("outer:", event.target.id, event.currentTarget.id);
+});
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Find the collection inside JSON</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; line-height: 1.5; }
+    button, input, select, textarea { font: inherit; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; background: #eef3f8; }
+    
+  </style>
+</head>
+<body>
+  <p><a href="index.html">Back to example index</a></p>
+  <h1>Find the collection inside JSON</h1>
+  <p>Open the Console to compare four data shapes.</p>
+  <script>
+function firstTitle(data) {
+  if (!Array.isArray(data.docs)) {
+    return "Invalid response: docs is not an array";
+  }
+  if (data.docs.length === 0) {
+    return "No books found";
+  }
+  return data.docs[0]?.title || "Untitled";
+}
+console.log(firstTitle({ docs: [{ title: "Learning JavaScript" }] }));
+console.log(firstTitle({ docs: [] }));
+console.log(firstTitle({ docs: [{}] }));
+console.log(firstTitle({ docs: null }));
+  </script>
+</body>
+</html>

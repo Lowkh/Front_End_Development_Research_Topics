@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flex wrapping and item sizing</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; line-height: 1.5; }
+    button, input, select, textarea { font: inherit; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; background: #eef3f8; }
+    .cards { display: flex; flex-wrap: wrap; gap: 1rem; }
+.card { box-sizing: border-box; min-width: 0; padding: 1rem; border: 1px solid; flex-grow: 1; flex-shrink: 1; flex-basis: 16rem; }
+  </style>
+</head>
+<body>
+  <p><a href="index.html">Back to example index</a></p>
+  <h1>Flex wrapping and item sizing</h1>
+  <p>Resize the browser to see cards wrap.</p>
+<div class="cards"><article class="card">Book One</article><article class="card">Book Two</article><article class="card">Book Three</article></div>
+  <script>
+
+  </script>
+</body>
+</html>
